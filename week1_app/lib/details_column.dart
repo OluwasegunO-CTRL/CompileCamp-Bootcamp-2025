@@ -34,7 +34,7 @@ class DetailsColumn extends StatelessWidget {
           ),
         ),
         Text(
-          'I am proficient in Flutter, Dart, and have not so much experience with RESTful APIs and formatting JSON files.',
+          'I am proficient in Flutter, Dart, and have some experience with RESTful APIs and formatting JSON files.',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,

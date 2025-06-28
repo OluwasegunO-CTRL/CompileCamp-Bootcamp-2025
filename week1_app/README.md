@@ -12,6 +12,6 @@ The project requirements are :
 - Test on both Android and iOS (or Web)
 - Ensure responsive design for different screen sizes
 
-My Project submissions meet almost all of the requirements.
+My Project submission meet almost all of the requirements.
 
 

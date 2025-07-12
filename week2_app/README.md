@@ -2,7 +2,9 @@
 
 ## Interactive Calculator App with scientific Function
 
-Dart fundamentals were used in this app.
+This is a comprehensive app that demonstrates advanced dart concepts and stateful widget management.
 
-<img src="./images/screenshot.png" width="100">
+This is the week 2 project for the compilecamp bootcamp.
+
+<img src="./images/screenshot.png" width="200">
 

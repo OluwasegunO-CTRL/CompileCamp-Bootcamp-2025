@@ -1,16 +1,17 @@
-# new_app
+# Week1_app
 
-A new Flutter project.
+This is the Week 1 project of CompileCamp 2025 Bootcamp.
 
-## Getting Started
+The project requirements are :
+- Design a profile screen with personal information
+- Use at least 5 different widget types(TExt, Image, Container, Column. Row)
+- Implement proper spacing and padding
+- Add a profile photo (can be from assets or network)
+- Include bio, skills list, and contact Information
+- Apply basic styling with colors and fonts
+- Test on both Android and iOS (or Web)
+- Ensure responsive design for different screen sizes
 
-This project is a starting point for a Flutter application.
+My Project submission meet almost all of the requirements.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

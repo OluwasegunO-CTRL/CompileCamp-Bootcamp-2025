@@ -229,6 +229,7 @@ class CalculatorLogic {
     }
   }
 
+
   static String formatDisplay(double value) {
     if (value == value.toInt()) {
       return value.toInt().toString();
@@ -245,3 +246,5 @@ class CalculatorLogic {
     return formatted;
   }
 }
+
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:week2_app/logic/calc_logic.dart';
 import 'package:week2_app/model/calc_model.dart';
+import 'package:week2_app/logic/scientific_calc.dart';
 import 'package:week2_app/widgets/build_display.dart';
 
 class CalcApp extends StatefulWidget {
@@ -51,6 +52,18 @@ class _CalcAppState extends State<CalcApp> {
       CalculatorButton(text: "0", value: "0", type: ButtonType.number),
       CalculatorButton(text: ".", value: ".", type: ButtonType.number),
       CalculatorButton(text: "=", value: "=", type: ButtonType.operation, color: Colors.blue),
+    ],
+    [
+      CalculatorButton(text: "sin", value: "sin", type: ButtonType.function),
+      CalculatorButton(text: "cos", value: "cos", type: ButtonType.function),
+      CalculatorButton(text: "tan", value: "tan", type: ButtonType.function),
+      CalculatorButton(text: "log", value: "log", type: ButtonType.function),
+    ],
+    [
+      CalculatorButton(text: "ln", value: "ln", type: ButtonType.function),
+      CalculatorButton(text: "x²", value: "x²", type: ButtonType.function),
+      CalculatorButton(text: "x³", value: "x³", type: ButtonType.function),
+      CalculatorButton(text: "1/x", value: "1/x", type: ButtonType.function),
     ],
   ];
   
@@ -263,6 +276,11 @@ class _CalcAppState extends State<CalcApp> {
     
     setState(() {
       _state = CalculatorLogic.processInput(_state, value);
+      if (value == "sin" || value == "cos" || value == "tan" || 
+          value == "log" || value == "ln" || value == "x²" || 
+          value == "x³" || value == "1/x") {
+        _state = ScientificCalculator.handleScientificFunction(_state, value);
+      }
     });
   }
   

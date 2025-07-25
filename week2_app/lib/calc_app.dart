@@ -24,6 +24,18 @@ class _CalcAppState extends State<CalcApp> {
       CalculatorButton(text: "M-", value: "M-", type: ButtonType.memory),
     ],
     [
+      CalculatorButton(text: "sin", value: "sin", type: ButtonType.function),
+      CalculatorButton(text: "cos", value: "cos", type: ButtonType.function),
+      CalculatorButton(text: "tan", value: "tan", type: ButtonType.function),
+      CalculatorButton(text: "log", value: "log", type: ButtonType.function),
+    ],
+    [
+      CalculatorButton(text: "ln", value: "ln", type: ButtonType.function),
+      CalculatorButton(text: "x²", value: "x²", type: ButtonType.function),
+      CalculatorButton(text: "x³", value: "x³", type: ButtonType.function),
+      CalculatorButton(text: "1/x", value: "1/x", type: ButtonType.function),
+    ],
+    [
       CalculatorButton(text: "C", value: "C", type: ButtonType.utility, color: Colors.red[400]),
       CalculatorButton(text: "CE", value: "CE", type: ButtonType.utility),
       CalculatorButton(text: "√", value: "√", type: ButtonType.function),
@@ -52,18 +64,6 @@ class _CalcAppState extends State<CalcApp> {
       CalculatorButton(text: "0", value: "0", type: ButtonType.number),
       CalculatorButton(text: ".", value: ".", type: ButtonType.number),
       CalculatorButton(text: "=", value: "=", type: ButtonType.operation, color: Colors.blue),
-    ],
-    [
-      CalculatorButton(text: "sin", value: "sin", type: ButtonType.function),
-      CalculatorButton(text: "cos", value: "cos", type: ButtonType.function),
-      CalculatorButton(text: "tan", value: "tan", type: ButtonType.function),
-      CalculatorButton(text: "log", value: "log", type: ButtonType.function),
-    ],
-    [
-      CalculatorButton(text: "ln", value: "ln", type: ButtonType.function),
-      CalculatorButton(text: "x²", value: "x²", type: ButtonType.function),
-      CalculatorButton(text: "x³", value: "x³", type: ButtonType.function),
-      CalculatorButton(text: "1/x", value: "1/x", type: ButtonType.function),
     ],
   ];
   

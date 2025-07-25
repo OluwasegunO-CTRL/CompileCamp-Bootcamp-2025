@@ -15,7 +15,6 @@ class BuildDisplay extends StatelessWidget {
     return 24;
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,11 +36,24 @@ class BuildDisplay extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 12),
               ),
             ),
-          
           SizedBox(height: 8),
-          
+          // Scientific function display
+          if (_state.operation != null &&
+              ["sin", "cos", "tan", "log", "ln", "x²", "x³", "1/x"]
+                  .contains(_state.operation))
+            Text(
+              _state.operation!,
+              style: TextStyle(
+                color: Colors.greenAccent,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           // Current operation display
-          if (_state.operation != null && _state.previousValue != null)
+          if (_state.operation != null &&
+              _state.previousValue != null &&
+              !["sin", "cos", "tan", "log", "ln", "x²", "x³", "1/x"]
+                  .contains(_state.operation))
             Text(
               "${CalculatorLogic.formatDisplay(_state.previousValue!)} ${_state.operation}",
               style: TextStyle(
@@ -49,9 +61,7 @@ class BuildDisplay extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-          
           SizedBox(height: 8),
-          
           // Main display
           SizedBox(
             width: double.infinity,

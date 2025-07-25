@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:week1_app/example.dart';
 import 'package:week1_app/profilepage.dart';
 
 void main() {
@@ -12,8 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.cyan
+      ),
       title: 'Flutter Demo',
-      home: Profilepage(),
+      home: const Example()
+      // Profilepage(),
     );
   }
 }

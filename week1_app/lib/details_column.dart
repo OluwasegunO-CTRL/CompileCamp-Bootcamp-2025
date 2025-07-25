@@ -26,7 +26,7 @@ class DetailsColumn extends StatelessWidget {
         ),
         SizedBox(height: 20),
         Text(
-          'Skillset:',
+          'Skills:',
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.w500,

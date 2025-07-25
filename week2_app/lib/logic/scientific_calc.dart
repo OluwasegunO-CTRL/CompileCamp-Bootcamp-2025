@@ -45,6 +45,7 @@ class ScientificCalculator extends CalculatorLogic {
       currentValue: result,
       shouldResetDisplay: true,
       previousValue: current,
+      operation: function, // <-- Add this line to store the function name
     );
   }
 }

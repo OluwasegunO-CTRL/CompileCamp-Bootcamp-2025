@@ -70,10 +70,15 @@ class _MyAppState extends State<MyApp> {
         ),
         '/category_recipes': (context) => CategoriesRecipeGrid(),
       },
+      debugShowCheckedModeBanner: false,
       themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
     );
   }
+
+
+
+  
 }
 

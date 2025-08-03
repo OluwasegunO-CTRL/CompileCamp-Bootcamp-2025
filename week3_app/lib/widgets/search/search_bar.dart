@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:week3_app/data/sample_recipes.dart';
+import 'package:week3_app/models/recipe.dart'; // Import the Recipe model
 
 class MySearchDelegate extends SearchDelegate {
-
-  List<String> recipeTitles = sampleRecipes.map((recipe) => recipe.title).toList();
+  // Keep the full list of recipes, not just titles
+  final List<Recipe> allRecipes = sampleRecipes;
 
   @override
   Widget buildSuggestions(BuildContext context) {
     if (query.isEmpty) {
-      return Center(
+      return const Center(
         child: Text('Type a recipe name to search'),
       );
     }
-    // Filter the recipes based on the query
-   List<String> matchQuery = recipeTitles
-        .where((title) => title.toLowerCase().contains(query.toLowerCase()))
+    // Filter the list of Recipe objects
+    final List<Recipe> matchQuery = allRecipes
+        .where((recipe) => recipe.title.toLowerCase().contains(query.toLowerCase()))
         .toList();
+
     return ListView.builder(
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
-        var result = matchQuery[index];
+        final Recipe result = matchQuery[index];
         return ListTile(
-          title: Text(result),
+          title: Text(result.title),
           onTap: () {
-            // Handle recipe selection
+            // Close the search, and pass the selected Recipe object back
+            // OR navigate directly from here
             Navigator.pushNamed(
-                  context,
-                  '/recipe_details',
-                  arguments: result
+              context,
+              '/recipe_details',
+              arguments: result, // Pass the ENTIRE Recipe object
             );
           },
         );
@@ -37,44 +40,46 @@ class MySearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    List<String> matchQuery = recipeTitles
-        .where((title) => title.toLowerCase().contains(query.toLowerCase()))
+    // Filter the list of Recipe objects
+    final List<Recipe> matchQuery = allRecipes
+        .where((recipe) => recipe.title.toLowerCase().contains(query.toLowerCase()))
         .toList();
+        
     return ListView.builder(
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
-        var result = matchQuery[index];
+        final Recipe result = matchQuery[index];
         return ListTile(
-          title: Text(result),
+          title: Text(result.title),
           onTap: () {
-            // Handle recipe selection
+            // Navigate and pass the ENTIRE Recipe object
             Navigator.pushNamed(
-                  context,
-                  '/recipe_details',
-                  arguments: result
+              context,
+              '/recipe_details',
+              arguments: result,
             );
           },
         );
       },
     );
   }
-  
+
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
         onPressed: () {
           query = '';
         },
       ),
     ];
   }
-  
+
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
       onPressed: () {
         close(context, null);
       },

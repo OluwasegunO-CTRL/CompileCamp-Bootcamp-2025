@@ -98,7 +98,7 @@ class RecipeDetailsScreen extends StatelessWidget {
                   recipe.description,
                   style: Theme.of(
                     context,
-                  ).textTheme.bodyLarge!.copyWith(color: Colors.black),
+                  ).textTheme.bodyLarge,
                 ),
               ),
               // Recipe metadata

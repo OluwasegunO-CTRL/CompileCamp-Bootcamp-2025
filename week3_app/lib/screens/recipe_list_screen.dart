@@ -27,7 +27,7 @@ class RecipeListScreen extends StatelessWidget {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 4,
-        childAspectRatio: 0.85,
+        childAspectRatio: 0.65,
       ),
       itemCount: recipes.length,
       itemBuilder: (context, index) {
@@ -39,15 +39,16 @@ class RecipeListScreen extends StatelessWidget {
           child: Card(
             // margin: const EdgeInsets.symmetric(horizontal: 4),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Container(
-                  height: 200,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    image: DecorationImage(
-                      image: NetworkImage(recipe.imageUrl),
-                      fit: BoxFit.cover,
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: DecorationImage(
+                        image: NetworkImage(recipe.imageUrl),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),

@@ -1,5 +1,7 @@
 # Week3 Recipe Book App
 
+This is the week 3 project from the Compilecamp 2025 Flutter Bootcamp.
+
 A modern Flutter application for browsing, searching, and managing recipes, built as part of the CompileCamp Bootcamp 2025.
 
 ## Overview

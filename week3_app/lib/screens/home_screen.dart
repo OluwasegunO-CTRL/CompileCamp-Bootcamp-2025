@@ -181,6 +181,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   void _exploreRecipes(BuildContext context) {
+    Navigator.pushNamed(context, '/recipe_list');
     // Navigate to recipe list
   }
 

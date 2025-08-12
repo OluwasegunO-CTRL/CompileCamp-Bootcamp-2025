@@ -2,7 +2,7 @@
 
 This project is a simple yet effective Todo application built with Flutter that demonstrates the core concepts of state management using the `flutter_riverpod` package. It showcases how to structure a Flutter application with a clear separation of UI, state, and business logic.
 
-![Demo video](assets/week4_demo.mp4)
+![Demo video](assets/short_week4.gif)
 
 ## ✨ Features
 

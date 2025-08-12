@@ -11,6 +11,7 @@ This project is a simple yet effective Todo application built with Flutter that 
   * **Clear Completed**: Easily clear all completed tasks with a single button.
   * **Real-time Stats**: See a live-updating count of total, active, and completed todos.
 
+
 ## 🚀 Core Concepts Demonstrated
 
 This project serves as a practical example of how to leverage different Riverpod providers to manage application state efficiently.
@@ -36,6 +37,8 @@ The UI is composed of several distinct widgets, each with a specific responsibil
 
 This component-based architecture makes the code more modular, easier to understand, and maintainable.
 
+![Todo app showing Empty Todo](assets/week4_1.png)
+![Todo app showing 4 todo items, completed and uncompleted](assets/week4_2.png)
 ## 📂 Project Structure
 
 The project is organized into the following main directories and files:

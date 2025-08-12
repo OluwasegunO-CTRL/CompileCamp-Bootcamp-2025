@@ -2,6 +2,8 @@
 
 This project is a simple yet effective Todo application built with Flutter that demonstrates the core concepts of state management using the `flutter_riverpod` package. It showcases how to structure a Flutter application with a clear separation of UI, state, and business logic.
 
+![Demo video](assetsshort_demo_week4mp4short_demo_week4.mp4)
+
 ## ✨ Features
 
   * **Add Todos**: Quickly add new tasks to your list.
@@ -10,6 +12,7 @@ This project is a simple yet effective Todo application built with Flutter that 
   * **Filter Todos**: View all, active, or completed tasks.
   * **Clear Completed**: Easily clear all completed tasks with a single button.
   * **Real-time Stats**: See a live-updating count of total, active, and completed todos.
+   * **Data Persistence**: Todos are saved locally and persist between app launches.
 
 
 ## 🚀 Core Concepts Demonstrated
@@ -25,6 +28,16 @@ The app is built around `flutter_riverpod` for a reactive and robust state manag
   * **`StateProvider`**: Employed for simpler state, like managing the current filter (`todoFilterProvider`). This allows the UI to easily read and update the active filter (All, Active, or Completed).
 
   * **`Provider`**: Leveraged for computed or derived state. The `filteredTodosProvider` dynamically computes the list of todos to display based on the current filter, and `todoStatsProvider` calculates statistics (total, active, and completed counts). This ensures that the UI is always in sync with the application's state without any manual state synchronization.
+
+### Data Persistence with SharedPreferences
+
+The app uses `shared_preferences` to persist todo data between app sessions:
+
+  * **Automatic Saving**: Todos are automatically saved to local storage whenever the list changes (add, toggle, delete, or clear completed).
+  * **Initial Loading**: Todos are loaded from storage when the app starts.
+  * **JSON Serialization**: Todo objects are serialized to JSON for storage and deserialized when loaded.
+  * **Error Handling**: Includes basic error handling for storage operations.
+
 
 ### UI and Widgets
 

@@ -13,13 +13,17 @@ class TodoScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // Key concept: ref.watch() for reactive updates
     final filteredTodos = ref.watch(filteredTodosProvider);
-    
+    final loadStatus = ref.watch(todoListLoadStatusProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Riverpod Todo Showcase'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Column(
+      body: loadStatus.when(
+        loading: () => Center(child: CircularProgressIndicator()), 
+        error: (error, stack) => Center(child: Text('Error loading todos'),),
+        data: (_) => Column(
         children: [
           // Statistics section
           TodoStatss(),
@@ -74,6 +78,7 @@ class TodoScreen extends ConsumerWidget {
           ),
         ],
       ),
+      )
     );
   }
 
